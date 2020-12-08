@@ -8,8 +8,7 @@ RUN ls \
   && chmod 777 mvnw \
   && ./mvnw install -DskipTests \
   &&  mkdir -p target/dependency \
-  &&  cd target/dependency \
-  &&  jar -xf ../*.jar
+  &&  (cd target/dependency;jar -xf ../*.jar)
 
 COPY src src
 
