@@ -3,7 +3,8 @@ WORKDIR /workspace/app
 
 COPY mvnw .mvn pom.xml ./
 
-RUN ./mvnw install -DskipTests \
+RUN chmod 777 mvnw \
+  && ./mvnw install -DskipTests \
   &&  mkdir -p target/dependency \
   &&  cd target/dependency \
   &&  jar -xf ../*.jar
