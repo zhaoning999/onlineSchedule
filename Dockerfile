@@ -2,7 +2,7 @@ FROM openjdk:8-jdk-alpine as build
 WORKDIR /workspace/app
 
 COPY mvnw .mvn pom.xml ./
-
+RUN ls
 RUN chmod 777 mvnw \
   && ./mvnw install -DskipTests \
   &&  mkdir -p target/dependency \
